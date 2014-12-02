@@ -106,11 +106,11 @@ public class ProxyManager {
         try{
             proxy.start();
             return proxy;
-        }catch(Exception ex){
+        }catch(RuntimeException ex){
             proxies.remove(port);
             try{
                 proxy.stop();
-            }catch(Exception ex2){
+            }catch(RuntimeException ex2){
                 ex.addSuppressed(ex2);
             }                
             throw ex;
