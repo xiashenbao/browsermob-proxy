@@ -111,7 +111,7 @@ public class ProxyManager {
             try{
                 proxy.stop();
             }catch(RuntimeException ex2){
-                ex.addSuppressed(ex2);
+                LOG.warn("Encountered exception while stopping proxy", ex2);
             }                
             throw ex;
         }
