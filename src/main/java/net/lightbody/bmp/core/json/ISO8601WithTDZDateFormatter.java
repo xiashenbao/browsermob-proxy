@@ -9,9 +9,10 @@ import org.codehaus.jackson.map.ser.ScalarSerializerBase;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+
+import javax.xml.bind.DatatypeConverter;
 
 
 /**
@@ -24,16 +25,16 @@ import java.util.Date;
 public class ISO8601WithTDZDateFormatter extends ScalarSerializerBase<Date> {
 	
     public final static ISO8601WithTDZDateFormatter instance = new ISO8601WithTDZDateFormatter();
-    private final DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
     
-
     public ISO8601WithTDZDateFormatter() {
         super(java.util.Date.class);
     }
 
     @Override
     public void serialize(java.util.Date value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonGenerationException {
-        jgen.writeString(df.format(value));
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(value);
+    	jgen.writeString(DatatypeConverter.printDateTime(cal));
     }
 
 
