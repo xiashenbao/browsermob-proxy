@@ -71,7 +71,7 @@ public abstract class ProxyServerTest {
 	public void testHttpProxyOption() throws Exception {
 		ProxyServer instance = new ProxyServer(8082);
 		Map<String, String> options = new HashMap<String, String>();
-		options.put("httpProxy", "localhost:80801");
+		options.put("httpProxy", "localhost:8080");
 		instance.setOptions(options);
 		instance.start();
 		try {
