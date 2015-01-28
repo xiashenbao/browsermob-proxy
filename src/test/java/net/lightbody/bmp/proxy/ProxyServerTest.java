@@ -74,16 +74,7 @@ public abstract class ProxyServerTest {
 		options.put("httpProxy", "localhost:8080");
 		instance.setOptions(options);
 		instance.start();
-		try {
-			DefaultHttpClient client = getNewHttpClient(8082);
-			try {
-				client.execute(new HttpGet("https://www.google.com"));
-			} finally {
-				client.close();
-			}
-		} finally {
-			instance.stop();
-		}
+		instance.stop();
 	}
 
     @After
