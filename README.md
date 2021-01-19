@@ -1,4 +1,8 @@
 由于作者已经3年没有维护，刚好项目抓取需要此工具，所以fork一下，给项目使用；
+    首先说一下，为什么我要修改此工具，因为我在用python+selenium抓取谷歌POI的时候，有的URL是AJAX请求，不能通过selenium抓取AJAX请求，需要通过此代理来获取URL，但是用的时候发现问题：
+（1）webdriver.get(ajaxurl)后，代理工具并没有返回我要的内容，如果直接通过浏览器访问ajaxurl，则浏览器自动下载一个txt的文本文档，对于这样的请求，代理工具没有任何消息返回；
+
+
 
 # BrowserMob Proxy
 
