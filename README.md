@@ -1,3 +1,5 @@
+由于作者已经3年没有维护，刚好项目抓取需要此工具，所以fork一下，给项目使用；
+
 # BrowserMob Proxy
 
 BrowserMob Proxy allows you to manipulate HTTP requests and responses, capture HTTP content, and export performance data as a [HAR file](http://www.softwareishard.com/blog/har-12-spec/).
